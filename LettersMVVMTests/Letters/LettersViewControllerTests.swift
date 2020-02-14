@@ -70,6 +70,28 @@ class LettersViewControllerTests: LettersMVVMTests {
         let result = sut.collectionView(sut.collectionView, layout: UICollectionViewLayout(), sizeForItemAt: defaultIndexPath)
         XCTAssertEqual(expected, result)
     }
+    
+    func testCellForItemAtWithEqualColorOfLastCell() {
+        let view = UIView()
+        sut.lastMountedCell = LetterCollectionViewCell()
+        sut.lastMountedCell?.holderView = view
+        sut.lastMountedCell?.holderView.backgroundColor = .white
+        let result = sut.collectionView(sut.collectionView, cellForItemAt: defaultIndexPath)
+        guard let cell = result as? LetterCollectionViewCell else {
+            XCTFail("should to be LetterCollectionViewCell")
+            return
+        }
+        XCTAssertTrue(UIColor.getAllColors().contains(cell.holderView.backgroundColor!))
+    }
+    
+    func testCellForItemAtWithOwnColor() {
+        let result = sut.collectionView(sut.collectionView, cellForItemAt: defaultIndexPath)
+        guard let cell = result as? LetterCollectionViewCell else {
+            XCTFail("should to be LetterCollectionViewCell")
+            return
+        }
+        XCTAssertTrue(UIColor.getAllColors().contains(cell.holderView.backgroundColor!))
+    }
 }
 
 final class LettersCoordinatorStub: LettersCoordinator {

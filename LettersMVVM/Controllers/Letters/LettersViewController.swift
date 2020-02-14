@@ -10,16 +10,17 @@ import UIKit
 
 class LettersViewController: UIViewController {
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     let letterNib = UINib(nibName: String(describing: LetterCollectionViewCell.self), bundle: Bundle.main)
     let numberOfItemsPerLine: CGFloat = 3
     let marginOfItems: CGFloat = 10
+    let titleText  = "letras"
     
     var viewModel: LettersViewModel
     var lettersList: LettersModel
     var coordinator: LettersCoordinator?
     var lastMountedCell: LetterCollectionViewCell?
-
-    @IBOutlet weak var collectionView: UICollectionView!
     
     init(viewModel: LettersViewModel) {
         self.viewModel = viewModel
@@ -33,7 +34,7 @@ class LettersViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        title = "letras"
+        title = titleText
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
 }

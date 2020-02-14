@@ -10,9 +10,12 @@ import UIKit
 
 class LettersViewModel {
     
+    let resourceName = "letters"
+    let extensionType = "json"
+    
     func getLetters() -> LettersModel {
         
-        guard let url = Bundle.main.url(forResource: "letters", withExtension: "json"),
+        guard let url = Bundle.main.url(forResource: resourceName, withExtension: extensionType),
             let data = try? Data(contentsOf: url),
             let jsonData = try? JSONDecoder().decode(LettersModel.self, from: data) else { fatalError() }
         

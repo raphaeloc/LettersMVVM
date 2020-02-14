@@ -28,6 +28,7 @@
 		17AFEA4723F71A1C002408BC /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AFEA4523F71A1C002408BC /* SplashViewController.swift */; };
 		17AFEA4823F71A1C002408BC /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17AFEA4623F71A1C002408BC /* SplashViewController.xib */; };
 		17AFEA4A23F71B96002408BC /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AFEA4923F71B96002408BC /* SplashCoordinator.swift */; };
+		17AFEA4E23F73641002408BC /* Int+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AFEA4D23F73641002408BC /* Int+Utils.swift */; };
 		17B9493423F3433F0044944C /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B9493323F3433F0044944C /* Reusable.swift */; };
 		17B9493A23F3444A0044944C /* LetterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B9493823F3444A0044944C /* LetterCollectionViewCell.swift */; };
 		17B9493B23F3444A0044944C /* LetterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B9493923F3444A0044944C /* LetterCollectionViewCell.xib */; };
@@ -77,6 +78,7 @@
 		17AFEA4523F71A1C002408BC /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		17AFEA4623F71A1C002408BC /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		17AFEA4923F71B96002408BC /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
+		17AFEA4D23F73641002408BC /* Int+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Utils.swift"; sourceTree = "<group>"; };
 		17B9493323F3433F0044944C /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		17B9493823F3444A0044944C /* LetterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCollectionViewCell.swift; sourceTree = "<group>"; };
 		17B9493923F3444A0044944C /* LetterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LetterCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				17C3195C23F6D5520094B334 /* UIColor+Utils.swift */,
+				17AFEA4D23F73641002408BC /* Int+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				170125D223F31D5D00E3FA3B /* Coordinator.swift in Sources */,
 				17A154F823F4596400B49E40 /* LetterDetailViewController.swift in Sources */,
 				170125CA23F31D3500E3FA3B /* LettersViewController.swift in Sources */,
+				17AFEA4E23F73641002408BC /* Int+Utils.swift in Sources */,
 				17B9494423F42CCF0044944C /* Letter.swift in Sources */,
 				170125A723F31CC700E3FA3B /* AppDelegate.swift in Sources */,
 				17AFEA4A23F71B96002408BC /* SplashCoordinator.swift in Sources */,

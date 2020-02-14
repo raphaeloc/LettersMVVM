@@ -10,9 +10,11 @@ import UIKit
 
 class LetterDetailViewModel {
     
+    let linkDefault = "https://pt.wikipedia.org/wiki/"
+    let titleText = "detalhes"
+    
     var letter: Letter
     var link: String?
-    let linkDefault = "https://pt.wikipedia.org/wiki/"
     
     init(letter: Letter) {
         self.letter = letter
@@ -21,7 +23,7 @@ class LetterDetailViewModel {
     func setup(view: LetterDetailViewController) {
         view.letterLabel.text = letter.character
         view.descriptionLabel.text = letter.description
-        view.title = "detalhes"
+        view.title = titleText
         guard let attributedString = createLink() else { return }
         view.linkLabel.attributedText = attributedString
         view.linkLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openUrl(_:))))

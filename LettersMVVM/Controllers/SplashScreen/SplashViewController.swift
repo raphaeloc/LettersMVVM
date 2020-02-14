@@ -13,6 +13,13 @@ class SplashViewController: UIViewController {
     @IBOutlet weak var letterLabel: UILabel!
     
     let letters: [String] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    let finalAnimationDuration = 1.5
+    let finalLabelFontSize: CGFloat = 40
+    let scaleFont: CGFloat = 2.0
+    let timeToOpenScreen: TimeInterval = 3.0
+    let timeToDecreaseInAnimation: TimeInterval = 0.02
+    let lastAnimationTime: TimeInterval = 0.08
+    let lettersText = "Letras"
     
     var timer: Timer?
     var seconds: TimeInterval = 0.2
@@ -38,14 +45,17 @@ class SplashViewController: UIViewController {
     @objc private func doAnimation() {
         if letterPosition < letters.count {
             letterLabel.text = letters[letterPosition]
-            letterPosition += 1
-            seconds -= 0.02
+            letterPosition.moreOne()
+            if seconds > lastAnimationTime {
+                seconds -= timeToDecreaseInAnimation
+            }
             timer = Timer.scheduledTimer(timeInterval: seconds, target: self, selector: #selector(doAnimation), userInfo: nil, repeats: false)
         } else {        
-            timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(openNewScreen), userInfo: nil, repeats: false)
-            self.letterLabel.font.withSize(150)
-            UIView.animate(withDuration: 5) {
-                self.letterLabel.transform = CGAffineTransform(scaleX: 4.0, y: 4.0)
+            timer = Timer.scheduledTimer(timeInterval: timeToOpenScreen, target: self, selector: #selector(openNewScreen), userInfo: nil, repeats: false)
+            UIView.animate(withDuration: finalAnimationDuration) {
+                self.letterLabel.text = self.lettersText
+                self.letterLabel.font = self.letterLabel.font.withSize(self.finalLabelFontSize)
+                self.letterLabel.transform = CGAffineTransform(scaleX: self.scaleFont, y: self.scaleFont)
             }
         }
     }
